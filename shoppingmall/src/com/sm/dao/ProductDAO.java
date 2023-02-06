@@ -59,6 +59,7 @@ public class ProductDAO {
 		return list;
 	}
 	
+	//상품 추가 메서드
 	public void add(ProductVO vo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -82,4 +83,26 @@ public class ProductDAO {
 		}
 	} 
 	
+	
+	//상품 삭제 메서드
+	public void delete(int number) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		String sql = "delete from Product where code=?";
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, number);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+	}
 }

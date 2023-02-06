@@ -28,7 +28,7 @@
 					<a href="update.do">수정</a>
 				</td>
 				<td>
-					<a href="delete.do">삭제</a>
+					<a href="delete.do?code=${product.code}">삭제</a>
 				</td>
 			</tr>
 		</c:forEach>
