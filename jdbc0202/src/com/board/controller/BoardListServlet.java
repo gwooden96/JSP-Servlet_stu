@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.board.dao.BoardDAO;
 import com.board.vo.BoardVO;
 
-import utill.Paging;
+import util.Paging;
 
 
 @WebServlet("/listAll.do")

@@ -8,8 +8,8 @@ import java.util.List;
 
 import com.board.vo.BoardVO;
 
-import utill.DBManger;
-import utill.Paging;
+import util.DBManger;
+import util.Paging;
 
 public class BoardDAO {
 	

@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 import com.board.vo.UserVO;
 
-import utill.DBManger;
+import util.DBManger;
 
 public class UserDAO {
 	
