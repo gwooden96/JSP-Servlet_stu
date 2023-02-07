@@ -8,7 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="contanier">
+	<div class="container my-3">
+		<div class="text-end mb-2">
+			<a class="btn btn-primary" href="addMovie.jsp">영화등록</a>
+		</div>
+	
 		<table class="table text-center">
 			<thead class="table-light">
 				<tr>
@@ -20,7 +24,7 @@
 			</thead>
 			<c:forEach var="mv" items="${movie}">
 			<tr>
-				<td>${mv.title}</td>
+				<td><a href="more.do?code=${mv.code}"> ${mv.title}</a></td>
 				<td>${mv.director}</td>
 				<td>${mv.actor}</td>
 				<td>${mv.price}</td>
