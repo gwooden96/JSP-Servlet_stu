@@ -27,11 +27,11 @@ public class ProductVO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getPictureur1() {
+	public String getPictureurl() {
 		return pictureurl;
 	}
-	public void setPictureur1(String pictureur1) {
-		this.pictureurl = pictureur1;
+	public void setPictureurl(String pictureurl) {
+		this.pictureurl = pictureurl;
 	}
 	public String getDescription() {
 		return description;

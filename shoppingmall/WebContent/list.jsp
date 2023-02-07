@@ -25,7 +25,7 @@
 				<td>${product.price}</td>
 				<td>${product.description}</td>
 				<td>
-					<a href="update.do">수정</a>
+					<a href="update.do?code=${product.code}">수정</a>
 				</td>
 				<td>
 					<a href="delete.do?code=${product.code}">삭제</a>
