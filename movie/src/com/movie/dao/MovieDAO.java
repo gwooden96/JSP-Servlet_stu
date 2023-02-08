@@ -135,7 +135,11 @@ public class MovieDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
-		String sql = "update movie set title=?, price=?, director=?, actor=?, poster=?, synopsis=? where code=?";
+		String sql = "update movie set title=?, price=?, director=?, actor=?, synopsis=?, poster=? where code=?";
+		
+		
+		if(vo.getPoster() == null)
+			sql = "update movie set title=?, price=?, director=?, actor=?, synopsis=? where code=?";
 		
 		
 		try {
@@ -146,11 +150,17 @@ public class MovieDAO {
 			pstmt.setInt(2, vo.getPrice());
 			pstmt.setString(3, vo.getDirector());
 			pstmt.setString(4, vo.getActor());
-			pstmt.setString(5, vo.getPoster());
-			pstmt.setString(6, vo.getSynopsis());
-			pstmt.setInt(7, vo.getCode());
+			pstmt.setString(5, vo.getSynopsis());
+			if(vo.getPoster() != null) {
+				pstmt.setString(6, vo.getPoster());
+				pstmt.setInt(7, vo.getCode());
+			} else {
+				pstmt.setInt(6, vo.getCode());
+			}
 			
 			pstmt.executeUpdate();
+			
+		
 			
 		} catch (Exception e) {
 			e.printStackTrace();

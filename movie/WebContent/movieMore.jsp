@@ -35,6 +35,8 @@
 				<div class="py-3">
 					<input class="btn btn-primary" type="button" value="수정" onclick="location.href='update.do?code=${more.code}'">
 					<input class="btn btn-info" type="button" value="목록" onclick="location.href='list.do'">
+					<input class="btn btn-info" type="button" value="포스터다운" onclick="location.href='download.do?poster=${more.poster}&title=${more.title}'">
+				
 				</div>
 		
 			</form>
