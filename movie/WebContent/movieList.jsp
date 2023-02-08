@@ -31,6 +31,7 @@
 			</tr>
 			</c:forEach>
 		</table>
+		${msg}
 	</div>
 </body>
 </html>

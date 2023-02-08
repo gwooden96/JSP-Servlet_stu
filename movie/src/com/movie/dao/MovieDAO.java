@@ -129,5 +129,57 @@ public class MovieDAO {
 		
 		return vo;
 	}
+	
+	// 영화 정보 수정 메서드
+	public void update(MovieVO vo) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		String sql = "update movie set title=?, price=?, director=?, actor=?, poster=?, synopsis=? where code=?";
+		
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, vo.getTitle());
+			pstmt.setInt(2, vo.getPrice());
+			pstmt.setString(3, vo.getDirector());
+			pstmt.setString(4, vo.getActor());
+			pstmt.setString(5, vo.getPoster());
+			pstmt.setString(6, vo.getSynopsis());
+			pstmt.setInt(7, vo.getCode());
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+	}
+	
+	//영화 삭제 메서드
+	public void delete(int code) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		String sql = "delete from movie where code=?";
+		
+		try {
+			
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, code);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+	}
 
 }

@@ -13,4 +13,4 @@
 		<a href="list.do">영화 목록 페이지</a>
 	</div>
 </body>
-</html> 
+</html>
